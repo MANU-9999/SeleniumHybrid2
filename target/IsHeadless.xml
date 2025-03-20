@@ -1,0 +1,10 @@
+<suite name="Test Suite">
+    <test name="Test">
+        <parameter name="browser" value="chrome" />
+        <parameter name="QA" value="QA" />
+        <parameter name="isHeadless" value="false" />
+        <classes>
+<!--            <class name="LoginTest"/>-->
+        </classes>
+    </test>
+</suite>

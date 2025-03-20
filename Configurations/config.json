@@ -1,0 +1,16 @@
+{
+  "environments": {
+    "QA": {
+      "url": "https://web-qa.runo.in",
+      "maxAttempts": 2
+    },
+    "DEV": {
+      "url": "https://cucumber.io/docs/",
+      "maxAttempts": 2
+    },
+    "PROD": {
+      "url": "",
+      "maxAttempts": 2
+    }
+  }
+}

@@ -1,0 +1,14 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<suite name="Suite" parallel="method" thead-count="2">
+    <test name="TestNG_Runo">
+        <classes>
+            <class name="LoginValidationTest"/>
+            <method>
+<!--                <include name="signUpAndValidTest"/>-->
+               <include group="smoke"/>
+            </method>
+
+        </classes>
+
+    </test>
+</suite>

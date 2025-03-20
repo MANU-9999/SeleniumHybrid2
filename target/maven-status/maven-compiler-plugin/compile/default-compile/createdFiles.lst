@@ -1,0 +1,15 @@
+drivermanagerfactory\DriverManager.class
+drivermanagerfactory\ChromeDriverManager.class
+testdata\TestDataProvider.class
+testsetup\Base.class
+drivermanagerfactory\DriverManagerFactory$1.class
+testdata\info.class
+testutils\BrowserActionsUtility.class
+drivermanagerfactory\DriverManagerFactory.class
+testutils\WaitUtility.class
+pageobjects\SignUpPage.class
+testutils\ExtentReportUtility.class
+listeners\GlobalListenerTest.class
+drivermanagerfactory\DriverType.class
+pageobjects\LoginPage.class
+drivermanagerfactory\FirefoxDriverManager.class
