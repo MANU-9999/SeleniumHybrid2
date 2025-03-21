@@ -1,51 +1,53 @@
 package core_configuration.testutils;
 
 import com.aventstack.extentreports.Status;
+import org.apache.logging.log4j.Logger;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import java.util.Arrays;
+
 public class ListenerUtility implements ITestListener {
-    @Override
+    Logger logger = LoggerUtility.getLogger(this.getClass());
+
     public void onTestStart(ITestResult result) {
+        logger.info(result.getMethod().getMethodName());
+        logger.info(result.getMethod().getDescription());
+        logger.info(Arrays.toString(result.getMethod().getGroups()));
         ExtentReportUtility.createExtentTest(result.getMethod().getMethodName());
-        ExtentReportUtility.getTest().info("Test started: " + result.getMethod().getMethodName());
     }
 
-    @Override
     public void onTestSuccess(ITestResult result) {
-        ExtentReportUtility.getTest().log(Status.PASS, result.getMethod().getMethodName() + " PASSED");
-        String screenshotPath = BrowserActionsUtility.captureScreenshot(result.getMethod().getMethodName());
-        ExtentReportUtility.getTest().addScreenCaptureFromPath(screenshotPath);
+        logger.info(result.getMethod().getMethodName() + " " + "PASSED");
+        ExtentReportUtility.getTest().log(Status.PASS, result.getMethod().getMethodName() + " " + "PASSED");
     }
 
-    @Override
     public void onTestFailure(ITestResult result) {
-        ExtentReportUtility.getTest().log(Status.FAIL, result.getMethod().getMethodName() + " FAILED");
+        logger.error(result.getMethod().getMethodName() + " " + "FAILED");
+        logger.error(result.getThrowable().getMessage());
+        ExtentReportUtility.getTest().log(Status.FAIL, result.getMethod().getMethodName() + " " + "FAILED");
+        ExtentReportUtility.getTest().log(Status.FAIL, result.getThrowable().getMessage());
+
+        logger.info("Capturing Screenshot for the failed tests");
         String screenshotPath = BrowserActionsUtility.captureScreenshot(result.getMethod().getMethodName());
+        logger.info("Attaching the Screenshot to the HTML File");
         ExtentReportUtility.getTest().addScreenCaptureFromPath(screenshotPath);
         ExtentReportUtility.getTest().fail(result.getThrowable());
     }
-    @Override
+
     public void onTestSkipped(ITestResult result) {
-        ExtentReportUtility.getTest().log(Status.SKIP, result.getMethod().getMethodName() + " SKIPPED");
+        logger.warn(result.getMethod().getMethodName() + " " + "SKIPPED");
+        ExtentReportUtility.getTest().log(Status.SKIP, result.getMethod().getMethodName() + " " + "SKIPPED");
     }
 
-    @Override
-    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-    }
-
-    @Override
-    public void onTestFailedWithTimeout(ITestResult result) {
-    }
-
-    @Override
     public void onStart(ITestContext context) {
-        ExtentReportUtility.setupSparkReporter("Report_"+context.getName()+"_.html");
+        logger.info("Test Suite Started");
+        ExtentReportUtility.setupSparkReporter("Report.html");
     }
 
-    @Override
     public void onFinish(ITestContext context) {
+        logger.info("Test Suite Completed");
         ExtentReportUtility.flushReport();
     }
 

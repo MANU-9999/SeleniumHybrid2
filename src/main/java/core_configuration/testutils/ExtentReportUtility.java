@@ -9,7 +9,7 @@ import java.io.File;
 
 public class ExtentReportUtility {
     private static ExtentReports extentReports;
-    private static final ThreadLocal<ExtentTest> extentTest = new ThreadLocal<>();
+    private static final ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
 
     public static void setupSparkReporter(String reportName) {
 
@@ -21,20 +21,15 @@ public class ExtentReportUtility {
         extentSparkReporter.config().setReportName("Selenium Test ResultsExtentReports");
     }
     public static void createExtentTest(String testName) {
-        if (extentReports == null) {
-            throw new IllegalStateException("ExtentReports is not initialized. Please call setupSparkReporter() first.");
-        }
         ExtentTest test = extentReports.createTest(testName);
         extentTest.set(test);
     }
+
     public static ExtentTest getTest() {
         return extentTest.get();
     }
 
-    @AfterSuite
     public static void flushReport() {
-        if (extentReports != null) {
-            extentReports.flush();
-        }
+        extentReports.flush();
     }
 }
