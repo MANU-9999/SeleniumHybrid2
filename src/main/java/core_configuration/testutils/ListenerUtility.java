@@ -41,7 +41,7 @@ public class ListenerUtility implements ITestListener {
 
     @Override
     public void onStart(ITestContext context) {
-        ExtentReportUtility.setupSparkReporter("AutomationReport_"+context.getName()+"_.html");
+        ExtentReportUtility.setupSparkReporter("Report_"+context.getName()+"_.html");
     }
 
     @Override

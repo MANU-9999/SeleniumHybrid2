@@ -1,8 +1,8 @@
 package core_configuration.pageobjects;
 
+import core_configuration.testutils.BrowserActionsUtility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import core_configuration.testutils.BrowserActionsUtility;
 
 public class LoginPage extends BrowserActionsUtility {
 

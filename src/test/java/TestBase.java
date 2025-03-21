@@ -1,15 +1,13 @@
-import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
 import core_configuration.constants.Browser;
 import core_configuration.env_config.Environment;
 import core_configuration.testutils.BrowserActionsUtility;
 import core_configuration.testutils.JSONUtility;
-import core_configuration.testutils.LoggerUtility;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
 public class TestBase {
     protected WebDriver driver;

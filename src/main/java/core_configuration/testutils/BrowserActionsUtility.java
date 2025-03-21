@@ -1,5 +1,6 @@
 package core_configuration.testutils;
 
+import core_configuration.constants.Browser;
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
@@ -12,7 +13,6 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import core_configuration.constants.Browser;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
