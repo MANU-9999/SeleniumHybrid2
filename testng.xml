@@ -1,11 +1,12 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
-<suite name="Suite" parallel="method" thead-count="2">
-    <test name="TestNG_Runo">
+<suite name="Suite" parallel="method" thead-count="3">
+    <test name="TestNG_One">
         <classes>
             <class name="LoginValidationTest"/>
             <method>
-<!--                <include name="signUpAndValidTest"/>-->
-               <include group="smoke"/>
+                <include name="signUpAndValidTest"/>
+                <include name="signUpAndInValidTest"/>
+<!--               <include group="smoke"/>-->
             </method>
 
         </classes>

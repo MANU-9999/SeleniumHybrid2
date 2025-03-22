@@ -12,7 +12,7 @@ public class LoginValidationTest extends TestBase {
         SignUpPage.doSignUpWith(mobileNumber);
     }
 
-    @Test(dataProvider = "inValidLogin", dataProviderClass = TestDataProvider.class, enabled = false, groups = "smoke")
+    @Test(dataProvider = "inValidLogin", dataProviderClass = TestDataProvider.class, enabled = true, groups = "smoke")
     public void signUpAndInValidTest(String mobileNumber, String password) {
         SignUpPage.doSignUpWith(mobileNumber);
     }

@@ -21,8 +21,8 @@ import java.util.Date;
 
 public class BrowserActionsUtility {
 
-    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();  // ThreadLocal to store WebDriver for each thread
-    private static Logger logger = LoggerUtility.getLogger(BrowserActionsUtility.class);
+    private static final ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();  // ThreadLocal to store WebDriver for each thread
+    private static final Logger logger = LoggerUtility.getLogger(BrowserActionsUtility.class);
     private static WebDriverWait wait;
 
     // Constructor for initializing WebDriver

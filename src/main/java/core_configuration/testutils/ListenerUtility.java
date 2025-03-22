@@ -33,7 +33,6 @@ public class ListenerUtility implements ITestListener {
         String screenshotPath = BrowserActionsUtility.captureScreenshot(result.getMethod().getMethodName());
         logger.info("Attaching the Screenshot to the HTML File");
         ExtentReportUtility.getTest().addScreenCaptureFromPath(screenshotPath);
-        ExtentReportUtility.getTest().fail(result.getThrowable());
     }
 
     public void onTestSkipped(ITestResult result) {
@@ -50,5 +49,4 @@ public class ListenerUtility implements ITestListener {
         logger.info("Test Suite Completed");
         ExtentReportUtility.flushReport();
     }
-
 }
