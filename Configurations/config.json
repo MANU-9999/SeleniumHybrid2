@@ -1,11 +1,11 @@
 {
   "environments": {
     "QA": {
-      "url": "https://web-qa.runo.in",
+      "url": "https://demoqa.com/login",
       "maxAttempts": 2
     },
     "DEV": {
-      "url": "https://cucumber.io/docs/",
+      "url": "",
       "maxAttempts": 2
     },
     "PROD": {

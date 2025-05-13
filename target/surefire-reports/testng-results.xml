@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-21T21:58:27 IST" name="Surefire suite" finished-at="2025-03-21T21:58:43 IST" duration-ms="15711">
+  <suite started-at="2025-03-22T12:38:48 IST" name="Surefire suite" finished-at="2025-03-22T12:39:10 IST" duration-ms="22648">
     <groups>
       <group name="smoke">
-        <method signature="LoginValidationTest.signUpAndInValidTest(java.lang.String,java.lang.String)[pri:0, instance:LoginValidationTest@47542153]" name="signUpAndInValidTest" class="LoginValidationTest"/>
-        <method signature="LoginValidationTest.signUpAndValidTest(java.lang.String,java.lang.String)[pri:0, instance:LoginValidationTest@47542153]" name="signUpAndValidTest" class="LoginValidationTest"/>
+        <method signature="LoginValidationTest.signUpAndInValidTest(java.lang.String,java.lang.String)[pri:0, instance:LoginValidationTest@358ee631]" name="signUpAndInValidTest" class="LoginValidationTest"/>
+        <method signature="LoginValidationTest.signUpAndValidTest(java.lang.String,java.lang.String)[pri:0, instance:LoginValidationTest@358ee631]" name="signUpAndValidTest" class="LoginValidationTest"/>
       </group> <!-- smoke -->
     </groups>
-    <test started-at="2025-03-21T21:58:27 IST" name="Surefire test" finished-at="2025-03-21T21:58:43 IST" duration-ms="15711">
+    <test started-at="2025-03-22T12:38:48 IST" name="Surefire test" finished-at="2025-03-22T12:39:10 IST" duration-ms="22648">
       <class name="LoginValidationTest">
-        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String,boolean,org.testng.ITestResult)[pri:0, instance:LoginValidationTest@47542153]" started-at="2025-03-21T21:58:27 IST" name="setup" description="Loading the test base" finished-at="2025-03-21T21:58:30 IST" duration-ms="2250" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String,boolean,org.testng.ITestResult)[pri:0, instance:LoginValidationTest@358ee631]" started-at="2025-03-22T12:38:48 IST" name="setup" description="Loading the test base" finished-at="2025-03-22T12:38:52 IST" duration-ms="3894" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -30,34 +30,34 @@
             </param>
             <param index="3">
               <value>
-                <![CDATA[[TestResult name={null} status=CREATED method=LoginValidationTest.signUpAndInValidTest(java.lang.String,java.lang.String)[pri:0, instance:LoginValidationTest@47542153] output={null}]]]>
+                <![CDATA[[TestResult name={null} status=CREATED method=LoginValidationTest.signUpAndInValidTest(java.lang.String,java.lang.String)[pri:0, instance:LoginValidationTest@358ee631] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="signUpAndInValidTest(java.lang.String,java.lang.String)[pri:0, instance:LoginValidationTest@47542153]" started-at="2025-03-21T21:58:30 IST" name="signUpAndInValidTest" data-provider="inValidLogin" finished-at="2025-03-21T21:58:35 IST" duration-ms="5740" status="PASS">
+        <test-method signature="signUpAndInValidTest(java.lang.String,java.lang.String)[pri:0, instance:LoginValidationTest@358ee631]" started-at="2025-03-22T12:38:52 IST" name="signUpAndInValidTest" data-provider="inValidLogin" finished-at="2025-03-22T12:38:59 IST" duration-ms="7098" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[76720031731]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Runo@03062025X]]>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- signUpAndInValidTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:LoginValidationTest@47542153]" started-at="2025-03-21T21:58:35 IST" name="tearDown" finished-at="2025-03-21T21:58:36 IST" duration-ms="214" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:LoginValidationTest@358ee631]" started-at="2025-03-22T12:38:59 IST" name="tearDown" finished-at="2025-03-22T12:38:59 IST" duration-ms="465" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String,boolean,org.testng.ITestResult)[pri:0, instance:LoginValidationTest@47542153]" started-at="2025-03-21T21:58:36 IST" name="setup" description="Loading the test base" finished-at="2025-03-21T21:58:37 IST" duration-ms="1357" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String,boolean,org.testng.ITestResult)[pri:0, instance:LoginValidationTest@358ee631]" started-at="2025-03-22T12:38:59 IST" name="setup" description="Loading the test base" finished-at="2025-03-22T12:39:02 IST" duration-ms="2993" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -76,14 +76,14 @@
             </param>
             <param index="3">
               <value>
-                <![CDATA[[TestResult name={null} status=CREATED method=LoginValidationTest.signUpAndValidTest(java.lang.String,java.lang.String)[pri:0, instance:LoginValidationTest@47542153] output={null}]]]>
+                <![CDATA[[TestResult name={null} status=CREATED method=LoginValidationTest.signUpAndValidTest(java.lang.String,java.lang.String)[pri:0, instance:LoginValidationTest@358ee631] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="signUpAndValidTest(java.lang.String,java.lang.String)[pri:0, instance:LoginValidationTest@47542153]" started-at="2025-03-21T21:58:37 IST" name="signUpAndValidTest" data-provider="signUpAndValidLogin" finished-at="2025-03-21T21:58:43 IST" duration-ms="5730" status="PASS">
+        <test-method signature="signUpAndValidTest(java.lang.String,java.lang.String)[pri:0, instance:LoginValidationTest@358ee631]" started-at="2025-03-22T12:39:02 IST" name="signUpAndValidTest" data-provider="signUpAndValidLogin" finished-at="2025-03-22T12:39:10 IST" duration-ms="7394" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -99,7 +99,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- signUpAndValidTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:LoginValidationTest@47542153]" started-at="2025-03-21T21:58:43 IST" name="tearDown" finished-at="2025-03-21T21:58:43 IST" duration-ms="204" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:LoginValidationTest@358ee631]" started-at="2025-03-22T12:39:10 IST" name="tearDown" finished-at="2025-03-22T12:39:10 IST" duration-ms="421" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
