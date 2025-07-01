@@ -39,4 +39,4 @@ It is designed for automating web application testing with advanced features lik
 - **Hybrid Framework**: Emphasizes modular design with POM, data-driven approach, and listeners.
 - **Test Reports**: Detailed reports using Extent Reports and automatic screenshot capture for failures.
 - **Simple Setup**: Instructions for setting up Java, Maven, WebDriver, and running tests.
-- **Clean and Concise**: The README provides a clear structure to help new developers set up and contribute to the project.
+- **Clean and Concise**: The README provides a clear structure to help new developers set up and contribute to the project
