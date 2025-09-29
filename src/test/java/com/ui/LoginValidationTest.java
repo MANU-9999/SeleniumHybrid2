@@ -1,7 +1,6 @@
 package com.ui;
 
 import core.pageobjects.LoginPage;
-import core.testdata.TestDataProvider;
 import core.testutils.ListenerUtility;
 import org.testng.annotations.*;
 

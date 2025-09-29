@@ -13,7 +13,7 @@ It is designed for automating web application testing with advanced features lik
 
 ## Project Structure
 ### Explanation of Key Directories and Files:
-- **/main/java/drivermanagerfactory**: Contains classes for managing WebDriver initialization and setup.
+- **/main/java/testutils**: Contains classes for managing WebDriver initialization and setup and reusable methods.
 - **/main/java/listeners**: Custom TestNG listeners for tracking and logging test execution events.
 - **/main/java/pageobjects**: Page Object Model (POM) classes for representing web pages.
 - **/main/java/testdata**: Test data files used for data-driven testing (Excel, CSV, etc.).

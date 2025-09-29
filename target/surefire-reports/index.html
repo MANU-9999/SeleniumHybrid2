@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Surefire_suite" class="navigator-link">
-              <span class="suite-name border-passed">Surefire suite</span>
+              <span class="suite-name border-failed">Surefire suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Surefire_suite" class="hide-methods failed suite-Surefire_suite"> (hide)</a> <!-- hide-methods failed suite-Surefire_suite -->
+                      <a href="#" panel-name="suite-Surefire_suite" class="show-methods failed suite-Surefire_suite"> (show)</a> <!-- show-methods failed suite-Surefire_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Surefire_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="com.ui.LoginValidationTest" class="method navigator-link" hash-for-method="loginFromExcel">loginFromExcel</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Surefire_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,12 +117,7 @@
                     <div class="method-list-content passed suite-Surefire_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Surefire_suite" title="LoginValidationTest" class="method navigator-link" hash-for-method="signUpAndInValidTest(, )">signUpAndInValidTest(, )</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Surefire_suite" title="LoginValidationTest" class="method navigator-link" hash-for-method="signUpAndValidTest(7672003173, Runo@03062025)">signUpAndValidTest(7672003173, Runo@03062025)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Surefire_suite" title="com.ui.EmployeeDataTest" class="method navigator-link" hash-for-method="verifyEmployeeDataFromExcelAndDB">verifyEmployeeDataFromExcelAndDB</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Surefire_suite -->
@@ -123,26 +132,58 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Surefire_suite" class="panel Surefire_suite">
-          <div class="suite-Surefire_suite-class-passed">
+          <div class="suite-Surefire_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">LoginValidationTest</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.ui.LoginValidationTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="signUpAndInValidTest(, )">
-                  </a> <!-- signUpAndInValidTest(, ) -->
-                  <span class="method-name">signUpAndInValidTest</span>
-                  <span class="parameters">(,)</span>
+                  <a name="loginFromExcel">
+                  </a> <!-- loginFromExcel -->
+                  <span class="method-name">loginFromExcel</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button id=&quot;login&quot; type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;...&lt;/button&gt; is not clickable at point (770, 499). Other element would receive the click: &lt;iframe frameborder=&quot;0&quot; src=&quot;https://ee849bb8b4068569ca8575c239a5d118.safeframe.googlesyndication.com/safeframe/1-0-45/html/container.html&quot; id=&quot;google_ads_iframe_/21849154601,22343295815/Ad.Plus-Anchor_0&quot; title=&quot;3rd party ad content&quot; name=&quot;&quot; scrolling=&quot;no&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;809&quot; height=&quot;100&quot; data-is-safeframe=&quot;true&quot; sandbox=&quot;allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation&quot; allow=&quot;private-state-token-redemption;attribution-reporting&quot; aria-label=&quot;Advertisement&quot; tabindex=&quot;0&quot; data-google-container-id=&quot;1&quot; style=&quot;border: 0px; vertical-align: bottom;&quot; data-load-complete=&quot;true&quot;&gt;&lt;/iframe&gt;
+  (Session info: chrome=140.0.7339.185)
+Build info: version: &apos;4.29.0&apos;, revision: &apos;5fc1ec94cb&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.6&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [530c2c929f5ee2db42fd78e3c134683d, clickElement {id=f.88E01105EEFA1799CFD4162EE08946EB.d.09DEA54AA816500B4E9F000B086FE55F.e.151}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.185, chrome: {chromedriverVersion: 140.0.7339.207 (17230b545fd..., userDataDir: C:\Users\manoj\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64982}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64982/devtoo..., se:cdpVersion: 140.0.7339.185, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (530c2c929f5ee2db42fd78e3c134683d)] -&gt; id: login]
+Session ID: 530c2c929f5ee2db42fd78e3c134683d
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at core.testutils.BrowserActionsUtility.clickOn(BrowserActionsUtility.java:97)
+	at core.pageobjects.LoginPage.performLogin(LoginPage.java:25)
+	at core.pageobjects.LoginPage.loginFromExcelData(LoginPage.java:31)
+	at core.pageobjects.LoginPage.loginFromExcel(LoginPage.java:61)
+	at com.ui.LoginValidationTest.loginFromExcel(LoginValidationTest.java:17)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-failed -->
+          <div class="suite-Surefire_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.ui.EmployeeDataTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="signUpAndValidTest(7672003173, Runo@03062025)">
-                  </a> <!-- signUpAndValidTest(7672003173, Runo@03062025) -->
-                  <span class="method-name">signUpAndValidTest</span>
-                  <span class="parameters">(7672003173,Runo@03062025)</span>
+                  <a name="verifyEmployeeDataFromExcelAndDB">
+                  </a> <!-- verifyEmployeeDataFromExcelAndDB -->
+                  <span class="method-name">verifyEmployeeDataFromExcelAndDB</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -158,8 +199,9 @@
 &lt;suite name=&quot;Surefire suite&quot; verbose=&quot;0&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Surefire test&quot; verbose=&quot;0&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;LoginValidationTest&quot;/&gt;
-      &lt;class name=&quot;TestBase&quot;/&gt;
+      &lt;class name=&quot;com.ui.EmployeeDataTest&quot;/&gt;
+      &lt;class name=&quot;com.ui.LoginValidationTest&quot;/&gt;
+      &lt;class name=&quot;com.ui.TestBase&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Surefire test --&gt;
 &lt;/suite&gt; &lt;!-- Surefire suite --&gt;
@@ -173,7 +215,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Surefire test (2 classes)</span>
+                <span class="test-name">Surefire test (3 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -187,11 +229,7 @@
               <span class="test-group-name">smoke</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">signUpAndInValidTest</span>
-                <br/>
-              </div> <!-- method-in-group -->
-              <div class="method-in-group">
-                <span class="method-in-group-name">signUpAndValidTest</span>
+                <span class="method-in-group-name">loginFromExcel</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -213,18 +251,18 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'signUpAndValidTest')
-data.setCell(0, 2, 'LoginValidationTest')
-data.setCell(0, 3, 7394);
+data.setCell(0, 1, 'loginFromExcel')
+data.setCell(0, 2, 'com.ui.LoginValidationTest')
+data.setCell(0, 3, 31908);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'signUpAndInValidTest')
-data.setCell(1, 2, 'LoginValidationTest')
-data.setCell(1, 3, 7098);
+data.setCell(1, 1, 'verifyEmployeeDataFromExcelAndDB')
+data.setCell(1, 2, 'com.ui.EmployeeDataTest')
+data.setCell(1, 3, 840);
 window.suiteTableData['Surefire_suite']= { tableData: data, tableDiv: 'times-div-Surefire_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 14 seconds</span>
+              <span class="suite-total-time">Total running time: 32 seconds</span>
               <div id="times-div-Surefire_suite">
               </div> <!-- times-div-Surefire_suite -->
             </div> <!-- times-div -->
@@ -250,30 +288,35 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">LoginValidationTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.ui.EmployeeDataTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">setup(chrome, QA, false, [TestResult name={null} status=CREATED method=LoginValidationTest.signUpAndInVali...)</span>
+                <span class="method-name">setup(chrome, QA, false, [TestResult name={null} status=CREATED method=EmployeeDataTest.verifyEmployeeData...)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">signUpAndInValidTest(, )</span>
-                <span class="method-start">3896 ms</span>
+                <span class="method-name">verifyEmployeeDataFromExcelAndDB</span>
+                <span class="method-start">18704 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">11005 ms</span>
+                <span class="method-start">19550 ms</span>
               </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.ui.LoginValidationTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">setup(chrome, QA, false, [TestResult name={null} status=CREATED method=LoginValidationTest.signUpAndValidT...)</span>
-                <span class="method-start">11476 ms</span>
+                <span class="method-name">setup(chrome, QA, false, [TestResult name={null} status=CREATED method=LoginValidationTest.loginFromExcel(...)</span>
+                <span class="method-start">19778 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">signUpAndValidTest(7672003173, Runo@03062025)</span>
-                <span class="method-start">14469 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">loginFromExcel</span>
+                <span class="method-start">42616 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">21864 ms</span>
+                <span class="method-start">74740 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

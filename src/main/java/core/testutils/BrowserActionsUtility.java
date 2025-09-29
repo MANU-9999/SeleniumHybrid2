@@ -3,10 +3,8 @@ package core.testutils;
 import core.constants.Browser;
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.Logger;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -20,6 +18,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
@@ -115,27 +114,23 @@ public class BrowserActionsUtility {
         logger.info("Element found and now entering text: " + textToEnter);
         element.sendKeys(textToEnter);
     }
-
     // Clear text in a field using locator
     public static void clearText(By textBoxLocator) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(textBoxLocator));
         logger.info("Element found and clearing the text box");
         element.clear();
     }
-
     // Select an option from a dropdown using visible text
     public static void selectFromDropdown(By dropDownLocator, String optionToSelect) {
         WebElement element = driver.get().findElement(dropDownLocator);
         Select select = new Select(element);
         select.selectByVisibleText(optionToSelect);
     }
-
     // Get visible text from an element
     public static String getVisibleText(By locator) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         return element.getText();
     }
-
     public static String getTextIfElementPresent(By locator) {
         try {
             WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -147,9 +142,6 @@ public class BrowserActionsUtility {
         }
         return null;
     }
-
-
-    // Capture a screenshot
     public static String captureScreenshot(String testName) {
         String SCREENSHOT_DIR = "/target/testScreenshotsFiles/";
         File screenshot = ((TakesScreenshot) driver.get()).getScreenshotAs(OutputType.FILE);  // Capture screenshot
@@ -164,10 +156,55 @@ public class BrowserActionsUtility {
         return filePath;
     }
 
+    public static void excel() throws IOException {
+        FileInputStream fis = new FileInputStream(new File("sheet.xlsx"));
+        Workbook workbook = WorkbookFactory.create(fis);
+        Sheet sheet = workbook.getSheetAt(0);
+
+        Iterator<Row> rowIterator = sheet.iterator();
+
+        while (rowIterator.hasNext()) {
+            Row row = rowIterator.next();
+
+            Iterator<Cell> cellIterator = row.iterator(); // Corrected this line
+            while (cellIterator.hasNext()) {
+                Cell cell = cellIterator.next();
+
+                // Handle different cell types (optional safety)
+                String cellValue = "";
+                if (cell.getCellType() == CellType.STRING) {
+                    cellValue = cell.getStringCellValue();
+                } else if (cell.getCellType() == CellType.NUMERIC) {
+                    cellValue = String.valueOf(cell.getNumericCellValue());
+                } else if (cell.getCellType() == CellType.BOOLEAN) {
+                    cellValue = String.valueOf(cell.getBooleanCellValue());
+                }
+
+                // ✅ Switch Case Validation
+                switch (cellValue) {
+                    case "Pass":
+                        System.out.println("The test result is PASS ✅");
+                        break;
+                    case "Fail":
+                        System.out.println("The test result is FAIL ❌");
+                        break;
+                    case "Pending":
+                        System.out.println("The test result is PENDING ⏳");
+                        break;
+                    default:
+                        System.out.println("Unknown status ❓ -> " + cellValue);
+                        break;
+                }
+            }
+        }
+
+        // Close resources outside the loop
+        workbook.close();
+        fis.close();
+    }
     public static List<Map<String, String>> readExcelData() throws IOException {
         String path = "//src//main//java//core//testdata//Excel_Imports//Credentials.xlsx";
         String sheetName = "sheet1";
-
         File src = new File(System.getProperty("user.dir") + path);
 
         List<Map<String, String>> credentials = new ArrayList<>();
@@ -204,7 +241,6 @@ public class BrowserActionsUtility {
     }
 
 
-    // Quit the browser and clean up
     public void quit() {
         if (driver.get() != null) {
             driver.get().quit();
